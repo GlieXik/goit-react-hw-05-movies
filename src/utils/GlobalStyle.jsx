@@ -1,9 +1,14 @@
-import { createGlobalStyle } from 'styled-components';
- 
+import { createGlobalStyle } from "styled-components";
+
 export const GlobalStyle = createGlobalStyle`
+*{box-sizing: border-box;}
   body {
     margin: 0;
-    padding: 16px;
+    padding: 0;
+    
+    }
+    a{
+      text-decoration: none;
     }
     ul,ol{
       padding: 0;
@@ -14,5 +19,3 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
 `;
- 
-
