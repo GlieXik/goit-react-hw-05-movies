@@ -1,16 +1,19 @@
-import fetchMovies from "../../api/api";
+import { fetchMovies } from "../../api/api";
 import { useState, useEffect } from "react";
 import Card from "./Card/Card";
+import { Loader } from "../Loader/Loader";
 const Home = () => {
   const [topMovies, setTopMovies] = useState([]);
+  const [loader, setLoader] = useState(false);
   useEffect(() => {
-    fetchMovies().then(({ data }) => setTopMovies(data.results));
+    setLoader(true);
+    fetchMovies()
+      .then(({ data }) => {
+        setTopMovies(data.results);
+      })
+      .finally(() => setLoader(false));
   }, []);
 
-  return (
-    <>
-      <Card options={topMovies}></Card>
-    </>
-  );
+  return <>{loader ? <Loader /> : <Card options={topMovies}></Card>}</>;
 };
 export default Home;

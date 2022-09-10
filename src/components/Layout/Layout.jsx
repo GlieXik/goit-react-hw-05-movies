@@ -14,7 +14,7 @@ const Layout = () => {
         <NavStyled to="/">Home</NavStyled>
         <NavStyled to="/movies">Movies</NavStyled>
       </Box>
-      <Box as="main" p={4}>
+      <Box as="main" p={4} m="0 auto" width={[1, 1 / 1.1]}>
         <Outlet />
       </Box>
     </>
