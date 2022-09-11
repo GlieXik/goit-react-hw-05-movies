@@ -1,14 +1,20 @@
 import { Box } from "../../../utils/Box";
 import { CardWrapper, CardText } from "./Card.styled";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation, useMatch } from "react-router-dom";
 
-const Card = ({ options, query }) => {
+const Card = ({ options }) => {
+  const location = useLocation();
+  const match = useMatch(`movies/`);
+
   return (
     <>
       <Box display="flex" gridGap={20} flexWrap="wrap" justifyContent="center">
         {options.map(({ id, original_title, poster_path }) => (
           <CardWrapper key={id}>
-            <NavLink to={`movies/${id}`}>
+            <NavLink
+              to={match ? `${id}` : `movies/${id}`}
+              state={{ from: location }}
+            >
               <img
                 src={
                   poster_path

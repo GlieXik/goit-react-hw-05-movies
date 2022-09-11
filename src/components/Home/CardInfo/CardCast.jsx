@@ -8,7 +8,7 @@ const CardCast = () => {
   useEffect(() => {
     fetchCast(movieId).then((res) => setCasts(res));
   }, [movieId]);
-  console.log(casts);
+
   return (
     <>
       {!casts ? (

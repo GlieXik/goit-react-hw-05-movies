@@ -9,7 +9,7 @@ const CardInfo = () => {
   const [state, setState] = useState();
   const location = useLocation();
 
-  const [prevLocation] = useState(location.state?.from ?? "/");
+  const prevLocation = location.state?.from ?? "/";
 
   useEffect(() => {
     fetchMoviesByid(movieId).then(({ data }) => {

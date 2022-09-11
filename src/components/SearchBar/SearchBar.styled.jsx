@@ -4,10 +4,11 @@ export const Form = styled("form")`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 26px;
 `;
 export const Input = styled("input")`
   width: 500px;
-  height: 45px;
+  height: 50px;
   font-size: 25px;
   border: 1 solid #f7f7f7;
   padding-left: 8px;
