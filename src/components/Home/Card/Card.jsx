@@ -2,7 +2,7 @@ import { Box } from "../../../utils/Box";
 import { CardWrapper, CardText } from "./Card.styled";
 import { NavLink } from "react-router-dom";
 
-const Card = ({ options }) => {
+const Card = ({ options, query }) => {
   return (
     <>
       <Box display="flex" gridGap={20} flexWrap="wrap" justifyContent="center">
@@ -10,7 +10,11 @@ const Card = ({ options }) => {
           <CardWrapper key={id}>
             <NavLink to={`movies/${id}`}>
               <img
-                src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+                src={
+                  poster_path
+                    ? `https://image.tmdb.org/t/p/w500/${poster_path}`
+                    : "https://via.placeholder.com/300x450"
+                }
                 alt="poster"
                 width="340"
               />

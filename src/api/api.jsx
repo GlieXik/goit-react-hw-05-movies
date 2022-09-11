@@ -39,3 +39,13 @@ export const fetchReviews = async (id) => {
     console.log(error.message);
   }
 };
+export const fetchSearch = async (movieName) => {
+  try {
+    const search = await axios.get(
+      `https://api.themoviedb.org/3/search/movie?api_key=96d1d57673138392a18193bca23574c5&query=&query=${movieName}`
+    );
+    return search.data.results;
+  } catch (error) {
+    console.log(error.message);
+  }
+};
